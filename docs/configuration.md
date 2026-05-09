@@ -9,7 +9,7 @@
 
 ## Local Development
 
-1. Start the backend in `/Users/junliu/git_repo/Twitch_backend`.
+1. Start the backend from the `Twitch_backend` repo.
 2. Copy `.env.example` to `.env`.
 3. Run `npm install` if dependencies are missing.
 4. Run `npm start`.

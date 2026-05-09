@@ -1,5 +1,7 @@
 # Twitch Frontend
 
+[![CI](https://github.com/trickywork/Twitch_Frontend/actions/workflows/ci.yml/badge.svg)](https://github.com/trickywork/Twitch_Frontend/actions/workflows/ci.yml)
+
 React frontend for the Twitch Explorer portfolio project. It calls the Spring Boot backend in `Twitch_backend` and demonstrates game search, content browsing, recommendations, and saved favorites.
 
 ## Live Demo
@@ -54,14 +56,14 @@ Twitch_frontend/
 Start the backend:
 
 ```bash
-cd /Users/junliu/git_repo/Twitch_backend
+cd Twitch_backend
 PORT=8084 TWITCH_DEMO_MODE=true ./gradlew bootRun
 ```
 
 Start the frontend:
 
 ```bash
-cd /Users/junliu/git_repo/Twitch_frontend
+cd Twitch_frontend
 cp .env.example .env
 npm install
 npm start
@@ -105,7 +107,6 @@ DELETE /favorite
 Backend repo:
 
 ```text
-/Users/junliu/git_repo/Twitch_backend
 https://github.com/trickywork/Twitch_Backend
 ```
 
