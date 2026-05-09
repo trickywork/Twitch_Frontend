@@ -6,8 +6,8 @@ React frontend for the Twitch Explorer portfolio project. It calls the Spring Bo
 
 - Portfolio URL: `https://twitch.junliu.dev`
 - Cloud Run service: `twitch`
-- Cloud Run URL: `https://twitch-888561484971.us-central1.run.app`
-- Backend API: `https://twitch-api-888561484971.us-central1.run.app`
+- Cloud Run URL: `https://twitch-gb7rmueyna-uc.a.run.app`
+- Backend API: `https://twitch-api-gb7rmueyna-uc.a.run.app`
 - Google Cloud project: `caramel-vim-441513-e1`
 - Region: `us-central1`
 
@@ -131,14 +131,14 @@ Manual deployment:
 ```bash
 gcloud builds submit \
   --config cloudbuild.yaml \
-  --substitutions _API_BASE_URL=https://twitch-api-888561484971.us-central1.run.app \
+  --substitutions _API_BASE_URL=https://twitch-api-gb7rmueyna-uc.a.run.app \
   --project caramel-vim-441513-e1
 ```
 
 The build arg embeds the backend API URL at build time:
 
 ```text
-REACT_APP_API_BASE_URL=https://twitch-api-888561484971.us-central1.run.app
+REACT_APP_API_BASE_URL=https://twitch-api-gb7rmueyna-uc.a.run.app
 ```
 
 Cloud Run cost controls:
