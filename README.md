@@ -10,10 +10,10 @@ npm install
 npm start
 ```
 
-By default the frontend calls `http://localhost:8080`. Set `REACT_APP_API_BASE_URL` when the backend runs elsewhere:
+By default the frontend calls `http://localhost:8084` when using `.env.example`. Set `REACT_APP_API_BASE_URL` when the backend runs elsewhere:
 
 ```bash
-REACT_APP_API_BASE_URL=https://your-backend-url npm start
+PORT=3004 REACT_APP_API_BASE_URL=https://your-backend-url npm start
 ```
 
 ## Build
@@ -21,7 +21,7 @@ REACT_APP_API_BASE_URL=https://your-backend-url npm start
 ```bash
 npm test -- --watchAll=false
 npm run build
-docker build --build-arg REACT_APP_API_BASE_URL=http://localhost:8080 -t twitch-frontend:local .
+docker build --build-arg REACT_APP_API_BASE_URL=http://localhost:8084 -t twitch-frontend:local .
 ```
 
 ## Deployment

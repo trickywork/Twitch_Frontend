@@ -4,7 +4,8 @@
 
 | Name | Required | Default | Purpose |
 | --- | --- | --- | --- |
-| `REACT_APP_API_BASE_URL` | No | `http://localhost:8080` | Backend base URL used at build time by Create React App. |
+| `PORT` | No | `3004` | Local frontend dev-server port. |
+| `REACT_APP_API_BASE_URL` | No | `http://localhost:8084` | Backend base URL used at build time by Create React App. |
 
 ## Local Development
 
