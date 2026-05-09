@@ -1,0 +1,39 @@
+substitutions:
+  _API_BASE_URL: https://twitch-api-gb7rmueyna-uc.a.run.app
+
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - --build-arg
+      - REACT_APP_API_BASE_URL=${_API_BASE_URL}
+      - -t
+      - us-central1-docker.pkg.dev/$PROJECT_ID/portfolio/twitch:$COMMIT_SHA
+      - .
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - push
+      - us-central1-docker.pkg.dev/$PROJECT_ID/portfolio/twitch:$COMMIT_SHA
+  - name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    entrypoint: gcloud
+    args:
+      - run
+      - deploy
+      - twitch
+      - --image
+      - us-central1-docker.pkg.dev/$PROJECT_ID/portfolio/twitch:$COMMIT_SHA
+      - --region
+      - us-central1
+      - --platform
+      - managed
+      - --allow-unauthenticated
+      - --min-instances
+      - "0"
+      - --max-instances
+      - "1"
+      - --memory
+      - 256Mi
+      - --cpu
+      - "1"
+images:
+  - us-central1-docker.pkg.dev/$PROJECT_ID/portfolio/twitch:$COMMIT_SHA
